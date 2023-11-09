@@ -13,6 +13,18 @@
         android:theme="@style/Theme.AhorraVoltios_04"
         tools:targetApi="31">
         <activity
+            android:name=".StatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ElectricityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConsumeActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterUserActivity"
             android:exported="false" />
         <activity

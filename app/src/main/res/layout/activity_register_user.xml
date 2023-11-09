@@ -31,47 +31,53 @@
         android:textColor="#2C572E"
         android:textSize="48sp"
         android:textStyle="bold" />
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    >
     <com.google.android.material.textfield.TextInputLayout
         app:startIconDrawable="@drawable/baseline_person_24"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre Completo"
+        android:id="@+id/name_user"
+
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_height="wrap_content"
-            android:id="@+id/name_user"
             android:layout_width="match_parent"
             android:inputType="text"
             />
 
-        <com.google.android.material.textfield.TextInputLayout
-            app:startIconDrawable="@drawable/baseline_email_24"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electronico"
+        app:startIconDrawable="@drawable/baseline_email_24">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo Electronico"
-            >
+            android:inputType="textEmailAddress" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_height="wrap_content"
-                android:id="@+id/email_user"
-                android:layout_width="match_parent"
-                android:inputType="textEmailAddress"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Celular"
+        android:id="@+id/phone_user"
         app:startIconDrawable="@drawable/baseline_phone_android_24"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_height="wrap_content"
-            android:id="@+id/phone_user"
             android:layout_width="match_parent"
             android:inputType="phone"
             />
@@ -84,11 +90,11 @@
         android:hint="Contraseña"
         app:startIconDrawable="@drawable/baseline_lock_24"
         app:endIconMode="password_toggle"
+        android:id="@+id/password1_user"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_height="wrap_content"
-            android:id="@+id/password1_user"
             android:layout_width="match_parent"
             android:inputType="textPassword"
         />
@@ -101,15 +107,24 @@
         android:hint="Repita la Contraseña"
         app:startIconDrawable="@drawable/baseline_lock_24"
         app:endIconMode="password_toggle"
+        android:id="@+id/password2_user"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_height="wrap_content"
-            android:id="@+id/password2_user"
             android:layout_width="match_parent"
             android:inputType="textPassword"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
 
+    <Button
+        android:id="@+id/buttonUserRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#256B28"
+        android:text="Registrarse"
+        android:textSize="24sp"
+        app:cornerRadius="10dp" />
 </LinearLayout>
