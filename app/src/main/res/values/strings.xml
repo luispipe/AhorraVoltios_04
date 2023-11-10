@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AhorraVoltios_04</string>
+    <string name="recommendation_1">Siempre que salgas de una habitación apagalas luces, no dejes dispositivos conectados, si ves que untoma genera cortos reportarlo.
+    </string>
+    <string name="recommendation_2">Verificar que ninguna llave este abierta,
+        si un grifo presenta goteo llamar a un técnico.
+    </string>
 </resources>

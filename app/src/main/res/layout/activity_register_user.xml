@@ -43,14 +43,12 @@
         android:layout_height="wrap_content"
         android:hint="Nombre Completo"
         android:id="@+id/name_user"
-
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:inputType="text"
-            />
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
