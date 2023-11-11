@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">AhorraVoltios_04</string>
-    <string name="recommendation_1">Siempre que salgas de una habitación apagalas luces, no dejes dispositivos conectados, si ves que untoma genera cortos reportarlo.
-    </string>
-    <string name="recommendation_2">Verificar que ninguna llave este abierta,
-        si un grifo presenta goteo llamar a un técnico.
-    </string>
+    <string name="success_consume">Su consumo esta por debajo del promedio, felicitaciones</string>
+    <string name="recommendation_text">A continuación, se listan algunas recomendaciones para que reduzcas tú consumo</string>
+    <string name="recommendation_water_1">1. Verificar que ninguna llave este abierta, cuando salgas de casa</string>
+    <string name="recommendation_water_2">2. Si se presenta una fuga de agua, llamar a un técnico de forma oportuna</string>
+    <string name="recommendation_water_3">3. Dejar la ducha abierta durante 5 minutos equivale a 12 litros de agua, asegurarse de usar el agua necesaria</string>
+    <string name="recommendation_electricity_1">1. Desconectar dispositivo despues de usarlos</string>
+    <string name="recommendation_electricity_2">2. Al salir de casa asegurarse de dejar todas las luces apagadas</string>
+    <string name="recommendation_electricity_3">3. Si un enchufe o toma produce cortos, contactar rapidamente a un técnico</string>
+    <string name="recommendation_electricity_4">4. Evitar conectar multiples dispositivos en el mismo toma, para prevenir una sobrecarga</string>
 </resources>
