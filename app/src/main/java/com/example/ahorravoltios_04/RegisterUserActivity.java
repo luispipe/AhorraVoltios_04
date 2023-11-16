@@ -1,5 +1,7 @@
 package com.example.ahorravoltios_04;
 
+import static java.lang.Thread.sleep;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -41,7 +43,16 @@ public class RegisterUserActivity extends AppCompatActivity {
                 if(validateUser()){
                     User user=createrUser();
                     saveUser(user);
-                    startActivity(login);
+                    Toast.makeText(getApplicationContext(),
+                    "Registro Exitoso",Toast.LENGTH_LONG).show();
+                    try {
+                        sleep(500);
+                        startActivity(login);
+                        finish();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+
                 }else{
                 Toast.makeText(getApplicationContext(),
             "Todos los campos deben estar diligenciados",Toast.LENGTH_LONG).show();
@@ -133,6 +144,7 @@ public class RegisterUserActivity extends AppCompatActivity {
             //Se define el FileWriter
             FileWriter writer=new FileWriter(fileUser,true);
             //BufferedWriter se utiliza para almacenar muchos datos (recomendado)
+            //Buffer es un espacio de memoria temporal que nos permite realizar multiples transacciones de datos de forma má rápida
             BufferedWriter bufferedWriter= new BufferedWriter(writer);
             bufferedWriter.write(
                     user.getId()+","+
