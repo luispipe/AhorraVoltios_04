@@ -21,7 +21,6 @@ public class ConsumeActivity extends AppCompatActivity {
 
         Intent receive= getIntent();
         String idUser= receive.getStringExtra("idUser");
-
         Intent registerWater= new Intent(getApplicationContext(),
                 WaterActivity.class);
         registerWater.putExtra("idUser",idUser);
