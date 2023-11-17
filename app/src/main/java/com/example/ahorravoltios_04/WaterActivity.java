@@ -63,7 +63,7 @@ public class WaterActivity extends AppCompatActivity {
         File waterFile= new File(getFilesDir(),"water.txt");
 
         try {
-            FileWriter writer= new FileWriter(waterFile);
+            FileWriter writer= new FileWriter(waterFile,true);
             BufferedWriter bufferedWriter= new BufferedWriter(writer);
             bufferedWriter.write(
                     consume.getSERIAL()+","+
