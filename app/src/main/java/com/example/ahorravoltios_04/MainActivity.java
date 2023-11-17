@@ -62,6 +62,9 @@ EditText user,password;
                           i.getPhone().equals(userLogin)){
                           state=true;
                           if (i.getPassword().equals(password.getText().toString())){
+   //Para enviar datos entre activitys se usan los intent por medio del metodo putExtra
+   //en el cuál le adicionamos una clave, y una valor a enviar.
+                              home_activity.putExtra("idUser",i.getId());
                               startActivity(home_activity);
                               break;
                           }else{

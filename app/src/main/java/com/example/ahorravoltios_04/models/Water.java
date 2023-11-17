@@ -3,13 +3,14 @@ package com.example.ahorravoltios_04.models;
 public class Water {
     private final String SERIAL;
     private int quantity,price;
-    private String month;
+    private String month, idUser;
 
-    public Water(String SERIAL, int quantity, int price, String month) {
+    public Water(String SERIAL, int quantity, int price, String month, String idUser) {
         this.SERIAL = SERIAL;
         this.quantity = quantity;
         this.price = price;
         this.month = month;
+        this.idUser = idUser;
     }
 
     public String getSERIAL() {
@@ -39,4 +40,9 @@ public class Water {
     public void setMonth(String month) {
         this.month = month;
     }
+
+    public String getIdUser() {
+        return idUser;
+    }
+
 }

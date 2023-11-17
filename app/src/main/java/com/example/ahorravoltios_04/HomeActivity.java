@@ -19,8 +19,13 @@ public class HomeActivity extends AppCompatActivity {
         statistics=findViewById(R.id.buttonStatistics);
         recommendations=findViewById(R.id.buttonRecommendations);
 
+        //Recibir los datos enviados en un Intent desde otro Activity
+        Intent receive= getIntent();
+        String idUser= receive.getStringExtra("idUser");
+
         Intent consumeView= new Intent(getApplicationContext(),
                 ConsumeActivity.class);
+        consumeView.putExtra("idUser",idUser);
 
         Intent statistics_view= new Intent(getApplicationContext(),
                 StatisticsActivity.class);
