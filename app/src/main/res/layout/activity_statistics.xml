@@ -24,13 +24,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/total_gradiant"
                 android:elevation="20dp"
@@ -47,23 +47,14 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ProgressBar
-                    android:id="@+id/progressBarWater"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:max="100"
-                    android:progress="50"
-                    android:progressBackgroundTint="#2196F3" />
-
                 <TextView
                     android:id="@+id/textViewTotalWater"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
                     android:text="700 L"
-                    android:textColor="#FFFFFF"
-                    android:textSize="34sp"
+                    android:textColor="#ABD9EE"
+                    android:textSize="36sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -74,7 +65,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/total_gradiant"
                 android:gravity="center_horizontal"
@@ -90,23 +81,14 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ProgressBar
-                    android:id="@+id/progressBarElectricity"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:max="100"
-                    android:progress="60"
-                    android:progressBackgroundTint="#2196F3" />
-
                 <TextView
                     android:id="@+id/textViewTotalElectricity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
                     android:text="150 KWh"
-                    android:textColor="#FFFFFF"
-                    android:textSize="34sp"
+                    android:textColor="#EFE7A1"
+                    android:textSize="36sp"
                     android:textStyle="bold" />
 
             </LinearLayout>

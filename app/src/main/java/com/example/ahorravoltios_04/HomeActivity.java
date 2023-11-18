@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent statistics_view= new Intent(getApplicationContext(),
                 StatisticsActivity.class);
+        statistics_view.putExtra("idUser",idUser);
 
         Intent recommendations_view= new Intent(getApplicationContext(),
                 RecommendationActivity.class);
