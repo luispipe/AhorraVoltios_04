@@ -45,26 +45,57 @@ public class StatisticsActivity extends AppCompatActivity {
         total_consume_water(list_water);
         total_consume_electricity(list_electricity);
 
+        int total= totalPayWater(list_water)+totalPayElectricity(list_electricity);
+        total_pay.setText("$ "+total);
 
+    }
 
+    public int totalPayWater(ArrayList<Water>list){
+        int pay=0;
+        for (Water i: list){
+            pay+=i.getPrice();
+        }
+        return pay;
+    }
+
+    public int totalPayElectricity(ArrayList<Electricity>list){
+        int pay=0;
+        for (Electricity i: list){
+            pay+=i.getPrice();
+        }
+        return pay;
     }
 
     public void total_consume_water(ArrayList<Water>list){
         int total=0;
-
+        String month="";
+        int max=0;
         for (Water i:list){
             total+=i.getQuantity();
+            if (max<i.getQuantity()){
+                max=i.getQuantity();
+                month=i.getMonth();
+            }
         }
         totalWater.setText(total+" L");
+        max_water_quantity.setText(max+" L");
+        max_water_month.setText(month);
     }
 
     public void total_consume_electricity(ArrayList<Electricity>list){
         int total=0;
-
+        String month="";
+        int max=0;
         for (Electricity i:list){
             total+=i.getQuantity();
+            if (max<i.getQuantity()){
+                max=i.getQuantity();
+                month=i.getMonth();
+            }
         }
         totalElectricity.setText(total+" KWh");
+        max_electricity_quantity.setText(max+" KWh");
+        max_electricity_month.setText(month);
     }
 
 
