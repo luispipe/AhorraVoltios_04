@@ -9,9 +9,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.ahorravoltios_04.models.User;
+import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,6 +25,8 @@ import java.io.FileWriter;
 public class RegisterUserActivity extends AppCompatActivity {
 
     TextInputLayout name,email,phone,password1,password2;
+
+    MaterialCheckBox cbTerminos;
     Button register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         phone=findViewById(R.id.phone_user);
         password1=findViewById(R.id.password1_user);
         password2=findViewById(R.id.password2_user);
+        cbTerminos=findViewById(R.id.cbTerminos);
 
         Intent login= new Intent(getApplicationContext(),
                 MainActivity.class);
@@ -60,6 +66,29 @@ public class RegisterUserActivity extends AppCompatActivity {
             }
         });
 
+        cbTerminos.setOnClickListener(v -> showTermsDialog());
+
+       /* cbTerminos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTermsDialog();
+            }
+        });*/
+
+
+
+    }
+
+    public void showTermsDialog(){
+        if (cbTerminos.isChecked()){
+            new MaterialAlertDialogBuilder(this, com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog)
+                    .setTitle("Términos y condiciones de uso")
+                    .setMessage("Bienvenido a la APP AhorraVoltios. Antes de empezar a usar nuestra plataforma le informamos" +
+                            " que nuestra app esta auditada por el gobierno y por ende cumplimos con la ley de protección de datos," +
+                            "por lo cuál para almacenar su información en nuestras bases de datos, requerimos de su autorización.")
+                    .setPositiveButton("Cerrar",null)
+                    .show();
+        }
     }
 
 
@@ -67,32 +96,35 @@ public class RegisterUserActivity extends AppCompatActivity {
         boolean validate= true;
 
         if(name.getEditText().getText().toString().isEmpty()){
-            name.setBoxBackgroundColor(Color.RED);
+            showError(name,"El campo nombre es obligatorio");
             validate=false;
         }
         if (email.getEditText().getText().toString().isEmpty()){
-            email.setBoxBackgroundColor(Color.RED);
+            showError(email,"El campo email es obligatorio");
             validate=false;
         }
         if (phone.getEditText().getText().toString().isEmpty()){
-            phone.setBoxBackgroundColor(Color.RED);
+            showError(phone,"El campo telefono es obligatorio");
             validate=false;
         }
         if (password1.getEditText().getText().toString().isEmpty()){
-            password1.setBoxBackgroundColor(Color.RED);
+            showError(password1,"Es obligatorio tener una contraseña");
             validate=false;
         }
         if (password2.getEditText().getText().toString().isEmpty()){
-            password2.setBoxBackgroundColor(Color.RED);
+            showError(password2,"Se debe confirmar la contraseña");
             validate=false;
         }
         if (!password1.getEditText().getText().toString().equals(password2.getEditText().getText().toString())){
-            password1.setBoxBackgroundColor(Color.RED);
-            password2.setBoxBackgroundColor(Color.RED);
+            showError(password2,"Las contraseñas no coinciden");
             validate=false;
         }
 
         return validate;
+    }
+
+    public void showError(TextInputLayout textInputLayout, String errorMessage){
+        textInputLayout.setError(errorMessage);
     }
 
     public User createrUser(){
