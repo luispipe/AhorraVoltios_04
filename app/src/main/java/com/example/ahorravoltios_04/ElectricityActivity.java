@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.ahorravoltios_04.models.Electricity;
 import com.example.ahorravoltios_04.models.Water;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -50,8 +51,10 @@ public class ElectricityActivity extends AppCompatActivity {
                     String serial= idUser+monthElectricity;
                     Electricity consumeElectricity= new Electricity(serial,quantityElectricity,priceElectricity,monthElectricity,idUser);
                     registerElectricity(consumeElectricity);
-                    Toast.makeText(getApplicationContext(),"Registro exitoso",
-                            Toast.LENGTH_LONG).show();
+                    Snackbar mySnackbar= Snackbar.make(findViewById(R.id.llelectricity),"Registro exitoso",5000);
+                    mySnackbar.show();
+                    /*Toast.makeText(getApplicationContext(),"Registro exitoso",
+                            Toast.LENGTH_LONG).show();*/
                     cleanView();
                 }
             }
